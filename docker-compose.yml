@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:15.1-alpine
+    container_name: solicitacao-db
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASS}
+    env_file:
+      - .env
+    ports:
+      - "8003:5432"
+    networks:
+      - solicitacao-net
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "10"
+    restart: always
+
+networks:
+  solicitacao-net:
+    driver: bridge
+
+volumes:
+  pg_data:
