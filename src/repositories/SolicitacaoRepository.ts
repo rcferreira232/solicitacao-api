@@ -1,5 +1,5 @@
 import { ISolicitacaoRepository } from "@/contracts/ISolicitacaoRepository";
-import { Solicitacao } from "@/entities/Solicitacao";
+import { Solicitacao } from "@/domain/entities/Solicitacao";
 import prisma from "@/infra/prisma/prisma";
 
 export class SolicitacaoRepository implements ISolicitacaoRepository {

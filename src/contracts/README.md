@@ -34,7 +34,7 @@ Esta interface é implementada pela classe `SolicitacaoRepository` na pasta `rep
 
 ```typescript
 import { ISolicitacaoRepository } from "@/contracts/ISolicitacaoRepository";
-import { Solicitacao } from "@/entities/Solicitacao";
+import { Solicitacao } from "@/domain/entities/Solicitacao";
 
 class SomeUseCase {
   constructor(private repository: ISolicitacaoRepository) {}

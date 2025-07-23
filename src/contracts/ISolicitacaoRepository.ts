@@ -1,4 +1,4 @@
-import { Solicitacao } from "@/entities/Solicitacao";
+import { Solicitacao } from "@/domain/entities/Solicitacao";
 
 export interface ISolicitacaoRepository {
   createSolicitacao(

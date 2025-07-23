@@ -1,5 +1,5 @@
 import { ISolicitacaoRepository } from "@/contracts/ISolicitacaoRepository";
-import { Solicitacao } from "@/entities/Solicitacao";
+import { Solicitacao } from "@/domain/entities/Solicitacao";
 
 export class CreateSolicitacaoUseCase {
   constructor(private repository: ISolicitacaoRepository) {}

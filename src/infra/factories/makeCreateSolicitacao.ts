@@ -1,4 +1,4 @@
-import { CreateSolicitacaoUseCase } from "@/usecase/CreateSolicitacaoUseCase";
+import { CreateSolicitacaoUseCase } from "@/domain/usecase/CreateSolicitacaoUseCase";
 import { SolicitacaoRepository } from "@/repositories/SolicitacaoRepository";
 
 export function makeCreateSolicitacao() {
