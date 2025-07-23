@@ -31,7 +31,7 @@ cd solicitacao-api
 npm install
 
 # 3. Inicie o servidor
-npm run dev
+npm run start
 ```
 
 ---
