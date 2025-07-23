@@ -22,19 +22,49 @@ Repositório desenvolvido para a disciplina de **Testes Automatizados**, com foc
 
 ## 📦 Instalação
 
+- 1. Clone o repositório
+
 ```bash
-# 1. Clone o repositório
 git clone https://github.com/rcferreira/solicitacao-api.git
 cd solicitacao-api
+```
 
-# 2. Instale as dependências
+- 2. Instale as dependências
+
+```bash
 npm install
+```
 
-# 3. Inicie o servidor
+- 3. Copie o arquivo de variáveis de ambiente
+
+```bash
+cp .env.example .env
+```
+
+- 4. Edite o arquivo .env com suas configurações
+
+```bash
+PORT=4001 # Porta do servidor
+```
+
+- 5. Inicie o servidor
+
+```bash
 npm run start
 ```
 
----
+- 6. Suba o contêiner do banco de dados
+
+```bash
+docker compose up
+```
+
+- 7. Se necessário, rode os seguintes comandos do prisma
+
+```bash
+npm run db:generate # Gera o cliente Prisma
+npm run db:push # Cria o banco de dados
+```
 
 ## 📁 Estrutura do Projeto
 
