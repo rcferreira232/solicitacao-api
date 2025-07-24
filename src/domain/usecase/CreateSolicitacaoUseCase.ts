@@ -1,7 +1,6 @@
 import { ISolicitacaoRepository } from "@/contracts/ISolicitacaoRepository";
 import { Solicitacao } from "@/domain/entities/Solicitacao";
 import { IUsecase } from "@/contracts/IUsecase";
-
 export class CreateSolicitacaoUseCase
   implements IUsecase<Omit<Solicitacao, "id" | "createdAt">, Solicitacao>
 {

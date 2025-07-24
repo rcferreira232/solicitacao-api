@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 import { IUsecase } from "@/contracts/IUsecase";
-import { Solicitacao } from "generated/prisma";
+import { Solicitacao } from "@/domain/entities/Solicitacao";
 
 export class SolicitacaoController {
   uc: IUsecase<Omit<Solicitacao, "id" | "createdAt">, Solicitacao>;
