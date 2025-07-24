@@ -1,8 +1,15 @@
 import { ISolicitacaoRepository } from "@/contracts/ISolicitacaoRepository";
 import { Solicitacao } from "@/domain/entities/Solicitacao";
+import { IUsecase } from "@/contracts/IUsecase";
 
-export class CreateSolicitacaoUseCase {
-  constructor(private repository: ISolicitacaoRepository) {}
+export class CreateSolicitacaoUseCase
+  implements IUsecase<Omit<Solicitacao, "id" | "createdAt">, Solicitacao>
+{
+  repository: ISolicitacaoRepository;
+
+  constructor(repository: ISolicitacaoRepository) {
+    this.repository = repository;
+  }
 
   async execute(
     data: Omit<Solicitacao, "id" | "createdAt">

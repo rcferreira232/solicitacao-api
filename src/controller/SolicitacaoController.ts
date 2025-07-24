@@ -1,7 +1,16 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { makeCreateSolicitacao } from "@/infra/factories/makeCreateSolicitacao";
+import { IUsecase } from "@/contracts/IUsecase";
+import { Solicitacao } from "generated/prisma";
 
 export class SolicitacaoController {
+  uc: IUsecase<Omit<Solicitacao, "id" | "createdAt">, Solicitacao>;
+
+  constructor(
+    uc: IUsecase<Omit<Solicitacao, "id" | "createdAt">, Solicitacao>
+  ) {
+    this.uc = uc;
+  }
+
   async create(request: FastifyRequest, reply: FastifyReply) {
     const { cliente, produto, quantidade } = request.body as {
       cliente: string;
@@ -9,8 +18,7 @@ export class SolicitacaoController {
       quantidade: number;
     };
 
-    const useCase = makeCreateSolicitacao();
-    const result = await useCase.execute({
+    const result = await this.uc.execute({
       cliente,
       produto,
       quantidade,
