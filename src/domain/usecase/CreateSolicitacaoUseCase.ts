@@ -14,6 +14,7 @@ export class CreateSolicitacaoUseCase {
       data.quantidade,
       new Date()
     );
-    return this.repository.createSolicitacao(solicitacao);
+
+    return this.repository.insert(solicitacao);
   }
 }

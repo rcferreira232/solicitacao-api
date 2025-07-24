@@ -1,7 +1,4 @@
 import { Solicitacao } from "@/domain/entities/Solicitacao";
+import { IRepository } from "./IRepository";
 
-export interface ISolicitacaoRepository {
-  createSolicitacao(
-    data: Omit<Solicitacao, "id" | "createdAt">
-  ): Promise<Solicitacao>;
-}
+export interface ISolicitacaoRepository extends IRepository<Solicitacao> {}
