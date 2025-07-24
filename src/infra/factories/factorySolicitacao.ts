@@ -1,8 +1,10 @@
+import { SolicitacaoController } from "@/controller/SolicitacaoController";
 import { CreateSolicitacaoUseCase } from "@/domain/usecase/CreateSolicitacaoUseCase";
 import { SolicitacaoRepository } from "@/repositories/SolicitacaoRepository";
 
-export function makeCreateSolicitacao() {
+export function factorySolicitacao() {
   const repository = new SolicitacaoRepository();
   const useCase = new CreateSolicitacaoUseCase(repository);
-  return useCase;
+  const controller = new SolicitacaoController(useCase);
+  return controller;
 }
